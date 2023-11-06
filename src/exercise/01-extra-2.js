@@ -12,12 +12,12 @@ function Counter({initialCount = 0, step = 1}) {
   // changes to the next two lines of code! Remember:
   // The 1st argument is called "state" - the current value of count
   // The 2nd argument is called "newState" - the value passed to setCount
-  const increment = () => countChange(count + 1)
+  const increment = () => countChange(step)
   return <button onClick={increment}>{count}</button>
 }
 
 function countReducer(currentstate, newState){
-  return newState;
+  return currentstate + newState;
 }
 
 // countChange is a function returned by React.useReducer. It's used to dispatch actions that update the state by calling the countReducer.
